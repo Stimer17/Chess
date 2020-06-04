@@ -1,0 +1,14 @@
+C:\Users\gr691_fnv\source\repos\Chess\Chess\bin\Debug\Chess.exe.config
+C:\Users\gr691_fnv\source\repos\Chess\Chess\bin\Debug\Chess.exe
+C:\Users\gr691_fnv\source\repos\Chess\Chess\bin\Debug\Chess.pdb
+C:\Users\gr691_fnv\source\repos\Chess\Chess\obj\Debug\Chess.csprojAssemblyReference.cache
+C:\Users\gr691_fnv\source\repos\Chess\Chess\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+C:\Users\gr691_fnv\source\repos\Chess\Chess\obj\Debug\Chess.exe
+C:\Users\gr691_fnv\source\repos\Chess\Chess\obj\Debug\Chess.pdb
+Z:\РКИС\Chess\Chess\bin\Debug\Chess.exe.config
+Z:\РКИС\Chess\Chess\bin\Debug\Chess.exe
+Z:\РКИС\Chess\Chess\bin\Debug\Chess.pdb
+Z:\РКИС\Chess\Chess\obj\Debug\Chess.csprojAssemblyReference.cache
+Z:\РКИС\Chess\Chess\obj\Debug\Chess.csproj.CoreCompileInputs.cache
+Z:\РКИС\Chess\Chess\obj\Debug\Chess.exe
+Z:\РКИС\Chess\Chess\obj\Debug\Chess.pdb
