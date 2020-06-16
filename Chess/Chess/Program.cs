@@ -1086,16 +1086,12 @@ namespace Chess
                                     {
 
                                         keypress = Console.ReadKey();
-                                        if (keypress.Key == ConsoleKey.Enter)
-                                        {
-                                            goto m;
-                                        }
-                                        else if (keypress.Key == ConsoleKey.Escape)
+                                        if (keypress.Key == ConsoleKey.Escape)
                                         {
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
                                             top -= 8;
                                             for (int i = 0; i < 4; i++)
@@ -1134,9 +1130,9 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                              figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                              figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -1192,11 +1188,11 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -1267,11 +1263,11 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -1359,9 +1355,9 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -1468,11 +1464,11 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -1594,11 +1590,11 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        if (keypress.Key == ConsoleKey.A)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -1728,14 +1724,18 @@ namespace Chess
                                             figur[loc - 10] == "DF" || figur[loc - 10] == "RUELEPHANT" || figur[loc - 10] == "RUHORSE" || figur[loc - 10] == "RUTOWER")) && left - 16 > 19 && top - 4 > 5)
                                     {
                                         keypress = Console.ReadKey();
-                                        if (keypress.Key == ConsoleKey.Escape)
+                                        if (keypress.Key == ConsoleKey.Enter)
+                                        {
+                                            goto m;
+                                        }
+                                        else if (keypress.Key == ConsoleKey.Escape)
                                         {
                                             tru = false;
                                             goto n;
                                         }
                                         else if (keypress.Key == ConsoleKey.A)
                                         {
-                                            if (left + 15 < 77 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                             {
@@ -2049,7 +2049,7 @@ namespace Chess
                                 Console.SetCursorPosition(0, 0);
                                 Console.ResetColor();
 
-                                if (left + 15 < 78 && top - 8 > 5)
+                                if (left + 15 < 84 && top - 8 > 5)
                                 {
                                     top -= 8; dis++;
                                     for (int i = 0; i < 4; i++)
@@ -2179,8 +2179,6 @@ namespace Chess
                                     top += 4; dis--;
                                 }
                             }
-                            Console.SetCursorPosition(0, 0);
-                            Console.ResetColor();
                         }
 
 
