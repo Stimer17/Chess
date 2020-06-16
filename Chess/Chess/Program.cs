@@ -879,7 +879,7 @@ namespace Chess
                                 {
                                     if (((figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8") || (figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER")) && left + 8 < 77 && top - 8 > 5)
+                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER")) && left + 8 < 84 && top - 8 > 5)
                                     {
                                         top -= 8;
                                         for (int i = 0; i < 4; i++)
@@ -955,7 +955,7 @@ namespace Chess
                                 {
                                     if ((figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
                                             figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER") && left + 8 < 77 && top + 8 < 35)
+                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER") && left + 8 < 84 && top + 8 < 35)
                                     {
                                         top += 8;
                                         for (int i = 0; i < 4; i++)
@@ -980,7 +980,7 @@ namespace Chess
                                 {
                                     if (((figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
                                             figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8") || (figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
-                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER")) && left + 23 < 77 && top - 4 > 5)
+                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER")) && left + 23 < 84 && top - 4 > 5)
                                     {
                                         top -= 4;
                                         for (int i = 0; i < 4; i++)
@@ -1005,7 +1005,7 @@ namespace Chess
                                 {
                                     if ((figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
                                             figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
-                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER") && left + 23 < 77 && top + 4 < 35)
+                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER") && left + 23 < 84 && top + 4 < 35)
                                     {
                                         top += 4;
                                         for (int i = 3; i >= 0; i--)
@@ -1086,12 +1086,16 @@ namespace Chess
                                     {
 
                                         keypress = Console.ReadKey();
-                                        if (keypress.Key == ConsoleKey.Escape)
+                                        if (keypress.Key == ConsoleKey.Enter)
+                                        {
+                                            goto m;
+                                        }
+                                        else if (keypress.Key == ConsoleKey.Escape)
                                         {
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
                                             top -= 8;
                                             for (int i = 0; i < 4; i++)
@@ -1130,27 +1134,31 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                             figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                 figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                 figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                    Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                        Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
+                                            catch { }
                                             top -= 8;
                                             for (int i = 0; i < 4; i++)
                                             {
@@ -1188,44 +1196,52 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                            figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
-                                            figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
-                                            figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
+                                                figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
+                                                figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
+                                            catch { }
                                             top += 8;
                                             for (int i = 0; i < 4; i++)
                                             {
@@ -1251,7 +1267,7 @@ namespace Chess
                                 {
                                     if ((figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
                                             figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER") && left + 15 < 77 && top + 8 < 35)
+                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER") && left + 15 < 84 && top + 8 < 35)
                                     {
                                         keypress = Console.ReadKey();
                                         if (keypress.Key == ConsoleKey.Enter)
@@ -1263,61 +1279,73 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                            figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
-                                            figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
-                                            figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
+                                                figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
+                                                figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
-                                            figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
-                                            figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
+                                                figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
+                                                figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
+                                            catch { }
                                             top += 8;
                                             for (int i = 0; i < 4; i++)
                                             {
@@ -1343,7 +1371,7 @@ namespace Chess
                                 {
                                     if ((figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
                                             figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
-                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER") && left + 23 < 77 && top - 4 > 5)
+                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER") && left + 23 < 84 && top - 4 > 5)
                                     {
                                         keypress = Console.ReadKey();
                                         if (keypress.Key == ConsoleKey.Enter)
@@ -1355,78 +1383,94 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                            figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            try
                                             {
-                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                    Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
-                                            figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
-                                            figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
+                                                figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
+                                                figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
-                                            figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
-                                            figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
+                                                figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
+                                                figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 15 < 77 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
-                                            figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
+                                                figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
+                                                figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
+                                            catch { }
                                             top -= 4;
                                             for (int i = 0; i < 4; i++)
                                             {
@@ -1452,7 +1496,7 @@ namespace Chess
                                 {
                                     if ((figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
                                             figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
-                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER") && left + 23 < 77 && top + 4 < 35)
+                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER") && left + 23 < 84 && top + 4 < 35)
                                     {
                                         keypress = Console.ReadKey();
                                         if (keypress.Key == ConsoleKey.Enter)
@@ -1464,95 +1508,115 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                            figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
-                                            figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
-                                            figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
+                                                figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
+                                                figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
-                                            figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
-                                            figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
+                                                figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
+                                                figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 15 < 77 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
-                                            figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER")) 
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
+                                                figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
+                                                figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 23 < 77 && top - 4 > 5 && (figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
-                                            figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
-                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 4;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 23 < 84 && top - 4 > 5 && (figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
+                                                figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
+                                                figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER"))
                                                 {
-                                                    left += 16;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 23;
+                                                    top -= 4;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 16;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 23;
+                                                    }
+                                                    top += 4;
                                                 }
-                                                top += 4;
                                             }
+                                            catch { }
                                             top += 4;
                                             for (int i = 3; i >= 0; i--)
                                             {
@@ -1590,112 +1654,136 @@ namespace Chess
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                            figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
-                                            figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
-                                            figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
+                                                figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
+                                                figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
-                                            figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
-                                            figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
+                                                figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
+                                                figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 15 < 77 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
-                                            figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
+                                                figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
+                                                figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 23 < 77 && top - 4 > 5 && (figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
-                                            figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
-                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 4;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 23 < 84 && top - 4 > 5 && (figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
+                                                figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
+                                                figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER"))
                                                 {
-                                                    left += 16;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 23;
+                                                    top -= 4;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 16;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 23;
+                                                    }
+                                                    top += 4;
                                                 }
-                                                top += 4;
                                             }
-                                            if (left + 23 < 77 && top + 4 < 35 && (figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
-                                            figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
-                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 4;
-                                                for (int i = 3; i >= 0; i--)
+                                                if (left + 23 < 84 && top + 4 < 35 && (figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
+                                                figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
+                                                figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER"))
                                                 {
-                                                    left += 16;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 23;
+                                                    top += 4;
+                                                    for (int i = 3; i >= 0; i--)
+                                                    {
+                                                        left += 16;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 23;
+                                                    }
+                                                    top -= 4;
                                                 }
-                                                top -= 4;
                                             }
+                                            catch { }
                                             top += 4;
                                             for (int i = 0; i < 4; i++)
                                             {
@@ -1728,134 +1816,163 @@ namespace Chess
                                         {
                                             goto m;
                                         }
-                                        else if (keypress.Key == ConsoleKey.Escape)
+                                        if (keypress.Key == ConsoleKey.Escape)
                                         {
                                             tru = false;
                                             goto n;
                                         }
-                                        else if (keypress.Key == ConsoleKey.A)
+                                        if (keypress.Key == ConsoleKey.A)
                                         {
-                                            if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
-                                            figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                            try
                                             {
-                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 84 && top - 8 > 5 && (figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
+                                                figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8" || figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
+                                                figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
-                                            figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
-                                            figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top - 8 > 5 && (figur[loc - 17] == "Null" || figur[loc - 17] == "DP1" || figur[loc - 17] == "DP2" || figur[loc - 17] == "DP3" || figur[loc - 17] == "DP4" || figur[loc - 17] == "DP5" ||
+                                                figur[loc - 17] == "DP6" || figur[loc - 17] == "DP7" || figur[loc - 17] == "DP8" || figur[loc - 17] == "LUTOWER" || figur[loc - 17] == "LUHORSE" || figur[loc - 17] == "LUELEPHANT" ||
+                                                figur[loc - 17] == "DF" || figur[loc - 17] == "RUELEPHANT" || figur[loc - 17] == "RUHORSE" || figur[loc - 17] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top -= 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top += 8;
                                                 }
-                                                top += 8;
                                             }
-                                            if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
-                                            figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
-                                            figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 8 > 19 && top + 8 < 35 && (figur[loc + 15] == "Null" || figur[loc + 15] == "DP1" || figur[loc + 15] == "DP2" || figur[loc + 15] == "DP3" || figur[loc + 15] == "DP4" || figur[loc + 15] == "DP5" ||
+                                                figur[loc + 15] == "DP6" || figur[loc + 15] == "DP7" || figur[loc + 15] == "DP8") || (figur[loc + 15] == "LUTOWER" || figur[loc + 15] == "LUHORSE" || figur[loc + 15] == "LUELEPHANT" ||
+                                                figur[loc + 15] == "DF" || figur[loc + 15] == "RUELEPHANT" || figur[loc + 15] == "RUHORSE" || figur[loc + 15] == "RUTOWER"))
                                                 {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 1;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 8;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 15 < 77 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
-                                            figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 8;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 15 < 77 && top + 8 < 35 && (figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
+                                                figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
+                                                figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER"))
                                                 {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
+                                                    top += 8;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 8;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 15;
+                                                    }
+                                                    top -= 8;
                                                 }
-                                                top -= 8;
                                             }
-                                            if (left + 23 < 77 && top - 4 > 5 && (figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
-                                            figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
-                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top -= 4;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left + 23 < 77 && top - 4 > 5 && (figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
+                                                figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8" || figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
+                                                figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER"))
                                                 {
-                                                    left += 16;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 23;
+                                                    top -= 4;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left += 16;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 23;
+                                                    }
+                                                    top += 4;
                                                 }
-                                                top += 4;
                                             }
-                                            if (left + 23 < 77 && top + 4 < 35 && (figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
-                                            figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
-                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 4;
-                                                for (int i = 3; i >= 0; i--)
+                                                if (left + 23 < 77 && top + 4 < 35 && (figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
+                                                figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
+                                                figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER"))
                                                 {
-                                                    left += 16;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 23;
+                                                    top += 4;
+                                                    for (int i = 3; i >= 0; i--)
+                                                    {
+                                                        left += 16;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 23;
+                                                    }
+                                                    top -= 4;
                                                 }
-                                                top -= 4;
                                             }
-                                            if (left - 16 > 19 && top + 4 < 35 && (figur[loc + 6] == "Null" || figur[loc + 6] == "DP1" || figur[loc + 6] == "DP2" || figur[loc + 6] == "DP3" || figur[loc + 6] == "DP4" || figur[loc + 6] == "DP5" ||
-                                         figur[loc + 6] == "DP6" || figur[loc + 6] == "DP7" || figur[loc + 6] == "DP8" || figur[loc + 6] == "LUTOWER" || figur[loc + 6] == "LUHORSE" || figur[loc + 6] == "LUELEPHANT" ||
-                                         figur[loc + 6] == "DF" || figur[loc + 6] == "RUELEPHANT" || figur[loc + 6] == "RUHORSE" || figur[loc + 6] == "RUTOWER"))
+                                            catch { }
+                                            try
                                             {
-                                                top += 4;
-                                                for (int i = 0; i < 4; i++)
+                                                if (left - 16 > 19 && top + 4 < 35 && (figur[loc + 6] == "Null" || figur[loc + 6] == "DP1" || figur[loc + 6] == "DP2" || figur[loc + 6] == "DP3" || figur[loc + 6] == "DP4" || figur[loc + 6] == "DP5" ||
+                                             figur[loc + 6] == "DP6" || figur[loc + 6] == "DP7" || figur[loc + 6] == "DP8" || figur[loc + 6] == "LUTOWER" || figur[loc + 6] == "LUHORSE" || figur[loc + 6] == "LUELEPHANT" ||
+                                             figur[loc + 6] == "DF" || figur[loc + 6] == "RUELEPHANT" || figur[loc + 6] == "RUHORSE" || figur[loc + 6] == "RUTOWER"))
                                                 {
-                                                    left -= 9;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 16;
+                                                    top += 4;
+                                                    for (int i = 0; i < 4; i++)
+                                                    {
+                                                        left -= 9;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left -= 7;
+                                                        Console.SetCursorPosition(left, top + i);
+                                                        Console.Write("-");
+                                                        left += 16;
+                                                    }
+                                                    top -= 4;
                                                 }
-                                                top -= 4;
                                             }
+                                            catch { }
                                             top -= 4;
                                             for (int i = 0; i < 4; i++)
                                             {
@@ -1889,7 +2006,7 @@ namespace Chess
                                         {
                                             if (((figur[loc - 15] == "Null" || figur[loc - 15] == "DP1" || figur[loc - 15] == "DP2" || figur[loc - 15] == "DP3" || figur[loc - 15] == "DP4" || figur[loc - 15] == "DP5" ||
                                             figur[loc - 15] == "DP6" || figur[loc - 15] == "DP7" || figur[loc - 15] == "DP8") || (figur[loc - 15] == "LUTOWER" || figur[loc - 15] == "LUHORSE" || figur[loc - 15] == "LUELEPHANT" ||
-                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER")) && left + 15 < 77 && top - 8 > 5)
+                                            figur[loc - 15] == "DF" || figur[loc - 15] == "RUELEPHANT" || figur[loc - 15] == "RUHORSE" || figur[loc - 15] == "RUTOWER")) && left + 15 < 84 && top - 8 > 5)
                                             {
                                                 Empty(left, top);
                                                 dis++;
@@ -1949,7 +2066,7 @@ namespace Chess
                                         {
                                             if ((figur[loc + 17] == "Null" || figur[loc + 17] == "DP1" || figur[loc + 17] == "DP2" || figur[loc + 17] == "DP3" || figur[loc + 17] == "DP4" || figur[loc + 17] == "DP5" ||
                                             figur[loc + 17] == "DP6" || figur[loc + 17] == "DP7" || figur[loc + 17] == "DP8") || (figur[loc + 17] == "LUTOWER" || figur[loc + 17] == "LUHORSE" || figur[loc + 17] == "LUELEPHANT" ||
-                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER") && left + 15 < 77 && top + 8 < 35)
+                                            figur[loc + 17] == "DF" || figur[loc + 17] == "RUELEPHANT" || figur[loc + 17] == "RUHORSE" || figur[loc + 17] == "RUTOWER") && left + 15 < 84 && top + 8 < 35)
                                             {
                                                 Empty(left, top);
                                                 dis++;
@@ -1969,7 +2086,7 @@ namespace Chess
                                         {
                                             if (((figur[loc - 6] == "Null" || figur[loc - 6] == "DP1" || figur[loc - 6] == "DP2" || figur[loc - 6] == "DP3" || figur[loc - 6] == "DP4" || figur[loc - 6] == "DP5" ||
                                             figur[loc - 6] == "DP6" || figur[loc - 6] == "DP7" || figur[loc - 6] == "DP8") || (figur[loc - 6] == "LUTOWER" || figur[loc - 6] == "LUHORSE" || figur[loc - 6] == "LUELEPHANT" ||
-                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER")) && left + 23 < 77 && top - 4 > 5)
+                                            figur[loc - 6] == "DF" || figur[loc - 6] == "RUELEPHANT" || figur[loc - 6] == "RUHORSE" || figur[loc - 6] == "RUTOWER")) && left + 23 < 84 && top - 4 > 5)
                                             {
                                                 Empty(left, top);
                                                 dis++;
@@ -1989,7 +2106,7 @@ namespace Chess
                                         {
                                             if ((figur[loc + 10] == "Null" || figur[loc + 10] == "DP1" || figur[loc + 10] == "DP2" || figur[loc + 10] == "DP3" || figur[loc + 10] == "DP4" || figur[loc + 10] == "DP5" ||
                                             figur[loc + 10] == "DP6" || figur[loc + 10] == "DP7" || figur[loc + 10] == "DP8" || figur[loc + 10] == "LUTOWER" || figur[loc + 10] == "LUHORSE" || figur[loc + 10] == "LUELEPHANT" ||
-                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER") && left + 23 < 77 && top + 4 < 35)
+                                            figur[loc + 10] == "DF" || figur[loc + 10] == "RUELEPHANT" || figur[loc + 10] == "RUHORSE" || figur[loc + 10] == "RUTOWER") && left + 23 < 84 && top + 4 < 35)
                                             {
                                                 Empty(left, top);
                                                 dis++;
@@ -2099,7 +2216,7 @@ namespace Chess
                                     }
                                     top -= 8; dis--;
                                 }
-                                if (left + 15 < 77 && top + 8 < 35)
+                                if (left + 15 < 84 && top + 8 < 35)
                                 {
                                     top += 8; dis++;
                                     for (int i = 0; i < 4; i++)
@@ -2115,7 +2232,7 @@ namespace Chess
                                     }
                                     top -= 8; dis--;
                                 }
-                                if (left + 23 < 77 && top - 4 > 5)
+                                if (left + 23 < 84 && top - 4 > 5)
                                 {
                                     top -= 4; dis++;
                                     for (int i = 0; i < 4; i++)
@@ -2131,7 +2248,7 @@ namespace Chess
                                     }
                                     top += 4; dis--;
                                 }
-                                if (left + 23 < 77 && top + 4 < 35)
+                                if (left + 23 < 84 && top + 4 < 35)
                                 {
                                     top += 4; dis++;
                                     for (int i = 3; i >= 0; i--)
@@ -2179,6 +2296,9 @@ namespace Chess
                                     top += 4; dis--;
                                 }
                             }
+                            Console.SetCursorPosition(0, 0);
+                            Console.ResetColor();
+
                         }
 
 
