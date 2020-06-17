@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Chess
@@ -837,7 +838,7 @@ namespace Chess
                                 }
                                 dis--;
                                 Frame();
-                                if ((count == 1 || count == 10) && top - 8 > 5)
+                                if (top - 8 > 5)
                                 {
                                     top -= 8;
                                     for (int i = 0; i < 4; i++)
@@ -854,13 +855,6 @@ namespace Chess
                                 }
                                 Console.SetCursorPosition(0, 0);
                                 Console.ResetColor();
-                                if (figur[loc - 8] == "UP1" || figur[loc - 8] == "UP2" || figur[loc - 8] == "UP3" || figur[loc - 8] == "UP4" ||
-                                    figur[loc - 8] == "UP5" || figur[loc - 8] == "UP6" || figur[loc - 8] == "UP7" || figur[loc - 8] == "UP8" ||
-                                    figur[loc - 8] == "LDTOWER" || figur[loc - 8] == "RDTOWER" || figur[loc - 8] == "LDHORSE" || figur[loc - 8] == "WF" ||
-                                    figur[loc - 8] == "LDELEPHANT" || figur[loc - 8] == "RDELEPHANT" || figur[loc - 8] == "RDHORSE")
-                                {
-
-                                }
                             }
                         }
 
@@ -2309,320 +2303,530 @@ namespace Chess
                             buff_left = left;
                             buff_top = top;
                             int buff_loc = loc;
-                            try
+                            int count = 17;
+                            bool tru = true;
+                            while (tru == true)
                             {
-                                if (((figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
-                                        figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8") || (figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
-                                        figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")))
+                                try
                                 {
-
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
-                                        figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
-                                        figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
-                                        figur[loc - 9] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
+                                    if (figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
+                                            figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8" || figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
+                                            figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")
                                     {
-                                        top -= 4;
-                                        for (int i = 0; i < 4; i++)
+
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
+                                            figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
+                                            figur[loc - 9] != "UP8")
                                         {
-                                            left -= 1;
+                                            if (figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
+                                            figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8" || figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
+                                            figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                                                top -= 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left -= 1;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 8;
+                                                }
+                                                goto zero;
+                                            }
+                                            else
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                top -= 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left -= 1;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 8;
+                                                }
+                                                loc -= 9;
+                                                left -= 8;
+                                            }
+                                        }
+                                    zero:
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+                                    }
+                                }
+                                catch { }
+                                try
+                                {
+                                    if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
+                                            figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
+                                            figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
+                                    {
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                            figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
+                                            figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
+                                            figur[loc - 7] != "UP8")
+                                        {
+                                            if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
+                                            figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
+                                            figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                                                top -= 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left += 8;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 15;
+                                                }
+                                                goto first;
+                                            }
+                                            else
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                top -= 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left += 8;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 15;
+                                                }
+                                                loc -= 7;
+                                                left += 8;
+                                            }
+                                        }
+                                    first:
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+                                    }
+                                }
+                                catch { }
+                                try
+                                {
+                                    if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
+                                            figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
+                                            figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
+                                    {
+
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
+                                            figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
+                                            figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
+                                            figur[loc + 9] != "UP8")
+                                        {
+                                            if (figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
+                                            figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
+                                            figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                                                top += 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left += 8;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 15;
+                                                }
+                                                goto second;
+                                            }
+                                            else
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                top += 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left += 8;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 15;
+                                                }
+                                                loc += 9;
+                                                left += 8;
+                                            }
+
+                                        }
+                                    second:
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+                                    }
+                                }
+                                catch { }
+                                try
+                                {
+                                    if (figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
+                                            figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
+                                            figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
+                                    {
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
+                                            figur[loc + 7] != "LDELEPHANT" && figur[loc + 7] != "RDELEPHANT" && figur[loc + 7] != "LDTOWER" && figur[loc + 7] != "RDTOWER" && figur[loc + 7] != "UP1" &&
+                                            figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
+                                            figur[loc + 7] != "UP8")
+                                        {
+                                            if (figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
+                                            figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
+                                            figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
+                                                top += 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left -= 1;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 8;
+                                                }
+                                                goto third;
+                                            }
+                                            else
+                                            {
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                top += 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left -= 1;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 8;
+                                                }
+                                                loc += 7;
+                                                left -= 8;
+                                            }
+                                        }
+                                    third:
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+                                    }
+                                }
+                                catch { }
+
+
+
+
+                                try
+                                {
+                                    if (figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
+                                                figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8" || figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
+                                                figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")
+                                    {
+                                        count = 0;
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
+                                            figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
+                                            figur[loc - 9] != "UP8")
+                                        {
+                                            keypress = Console.ReadKey();
+                                            if (keypress.Key == ConsoleKey.Enter)
+                                            {
+                                                goto m;
+                                            }
+                                            else if (keypress.Key == ConsoleKey.Escape)
+                                            {
+                                                tru = false;
+                                                goto n;
+                                            }
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
+                                            top -= 4;
+                                            for (int i = 0; i < 4; i++)
+                                            {
+                                                left += 8;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 15;
+                                            }
+                                            loc -= 7;
                                             left += 8;
+                                            count++;
                                         }
-                                        loc -= 9;
-                                        left -= 8;
+                                        left = buff_left;
+                                        top = buff_top;
+                                        loc = buff_loc;
                                     }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
                                 }
-                            }
-                            catch { }
-                            try
-                            {
-                                if (((figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
-                                        figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8") || (figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
-                                        figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")))
+                                catch {  }
+                                try
                                 {
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                    if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
+                                                figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
+                                                figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
+                                    {
+                                        count = 0;
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
                                         figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
                                         figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
-                                        figur[loc - 7] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
-                                    {
-                                        top -= 4;
-                                        for (int i = 0; i < 4; i++)
+                                        figur[loc - 7] != "UP8")
                                         {
-                                            left += 8;
+                                            keypress = Console.ReadKey();
+                                            if (keypress.Key == ConsoleKey.Enter)
+                                            {
+                                                goto m;
+                                            }
+                                            else if (keypress.Key == ConsoleKey.Escape)
+                                            {
+                                                tru = false;
+                                                goto n;
+                                            }
                                             Console.ForegroundColor = ConsoleColor.DarkGreen;
                                             Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left += 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 15;
-                                        }
-                                        loc -= 7;
-                                        left += 8;
-                                    }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
-                                }
-                            }
-                            catch { }
-                            try
-                            {
-                                if (((figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
-                                        figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8") || (figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
-                                        figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")))
-                                {
-
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
-                                        figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
-                                        figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
-                                        figur[loc + 9] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
-                                    {
-                                        top += 4;
-                                        for (int i = 0; i < 4; i++)
-                                        {
+                                            top -= 4;
+                                            for (int i = 0; i < 4; i++)
+                                            {
+                                                left += 8;
+                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 15;
+                                            }
+                                            loc -= 7;
                                             left += 8;
-                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left += 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 15;
+                                            count++;
                                         }
-                                        loc += 9;
-                                        left += 8;
+                                        left = buff_left;
+                                        top = buff_top;
+                                        loc = buff_loc;
                                     }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
+                                
                                 }
-                            }
-                            catch { }
-                            try
-                            {
-                                if (((figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
-                                        figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8") || (figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
-                                        figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")))
+                                catch { }
+                                try
                                 {
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
-                                        figur[loc + 7] != "LDELEPHANT" && figur[loc + 7] != "RDELEPHANT" && figur[loc + 7] != "LDTOWER" && figur[loc + 7] != "RDTOWER" && figur[loc + 7] != "UP1" &&
-                                        figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
-                                        figur[loc + 7] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
+                                    if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
+                                                figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
+                                                figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
                                     {
-                                        top += 4;
-                                        for (int i = 0; i < 4; i++)
+                                        keypress = Console.ReadKey();
+                                        if (keypress.Key == ConsoleKey.Enter)
                                         {
-                                            left -= 1;
-                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left += 8;
+                                            goto m;
                                         }
-                                        loc += 7;
-                                        left -= 8;
-                                    }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
-
-                                }
-                            }
-                            catch { }
-
-                            Console.SetCursorPosition(0, 0);
-                            Console.ReadKey();
-                            Console.ResetColor();
-
-
-
-                            try
-                            {
-                                if (((figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
-                                        figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8") || (figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
-                                        figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")))
-                                {
-
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
-                                        figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
-                                        figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
-                                        figur[loc - 9] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
-                                    {
-                                        top -= 4;
-                                        for (int i = 0; i < 4; i++)
+                                        else if (keypress.Key == ConsoleKey.Escape)
                                         {
-                                            left -= 1;
-                                            if (dis % 2 != 0)
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                                Console.BackgroundColor = ConsoleColor.DarkGray;
-                                            }
-                                            else
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.Yellow;
-                                                Console.BackgroundColor = ConsoleColor.Yellow;
-                                            }
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left += 8;
+                                            tru = false;
+                                            goto n;
                                         }
-                                        loc -= 9;
-                                        left -= 8;
-                                    }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
-                                }
-                            }
-                            catch { }
-                            try
-                            {
-                                if (((figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
-                                        figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8") || (figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
-                                        figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")))
-                                {
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
-                                        figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
-                                        figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
-                                        figur[loc - 7] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
-                                    {
-                                        top -= 4;
-                                        for (int i = 0; i < 4; i++)
+                                        else if (keypress.Key == ConsoleKey.A)
                                         {
-                                            left += 8;
-                                            if (dis % 2 != 0)
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                                Console.BackgroundColor = ConsoleColor.DarkGray;
-                                            }
-                                            else
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.Yellow;
-                                                Console.BackgroundColor = ConsoleColor.Yellow;
-                                            }
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left += 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 15;
                                         }
-                                        loc -= 7;
-                                        left += 8;
                                     }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
                                 }
-                            }
-                            catch { }
-                            try
-                            {
-                                if (((figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
-                                        figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8") || (figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
-                                        figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")))
+                                catch { }
+                                try
                                 {
+                                    if (figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
+                                                figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
+                                                figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
+                                    {
+                                        keypress = Console.ReadKey();
+                                        if (keypress.Key == ConsoleKey.Enter)
+                                        {
+                                            goto m;
+                                        }
+                                        else if (keypress.Key == ConsoleKey.Escape)
+                                        {
+                                            tru = false;
+                                            goto n;
+                                        }
+                                        else if (keypress.Key == ConsoleKey.A)
+                                        {
+                                        }
+                                    }
+                                }
+                                catch { }
 
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
-                                        figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
-                                        figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
-                                        figur[loc + 9] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
-                                    {
-                                        top += 4;
-                                        for (int i = 0; i < 4; i++)
-                                        {
-                                            left += 8;
-                                            if (dis % 2 != 0)
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                                Console.BackgroundColor = ConsoleColor.DarkGray;
-                                            }
-                                            else
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.Yellow;
-                                                Console.BackgroundColor = ConsoleColor.Yellow;
-                                            }
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left += 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 15;
-                                        }
-                                        loc += 9;
-                                        left += 8;
-                                    }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
-                                }
-                            }
-                            catch { }
-                            try
-                            {
-                                if (((figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
-                                        figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8") || (figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
-                                        figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")))
+
+
+
+                                Console.SetCursorPosition(0, 0);
+                                Console.ReadKey();
+                                Console.ResetColor();
+                                m:
+
+
+                                n:
+                                try
                                 {
-                                    while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
-                                        figur[loc + 7] != "LDELEPHANT" && figur[loc + 7] != "RDELEPHANT" && figur[loc + 7] != "LDTOWER" && figur[loc + 7] != "RDTOWER" && figur[loc + 7] != "UP1" &&
-                                        figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
-                                        figur[loc + 7] != "UP8" && figur[loc + 8] != "WKING" && figur[loc] != "WKING")
+                                    if (figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
+                                            figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8" || figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
+                                            figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")
                                     {
-                                        top += 4;
-                                        for (int i = 0; i < 4; i++)
+
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
+                                            figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
+                                            figur[loc - 9] != "UP8")
                                         {
-                                            left -= 1;
-                                            if (dis % 2 != 0)
+                                            Frame();
+                                            top -= 4;
+                                            for (int i = 0; i < 4; i++)
                                             {
-                                                Console.ForegroundColor = ConsoleColor.DarkGray;
-                                                Console.BackgroundColor = ConsoleColor.DarkGray;
+                                                left -= 1;
+
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 8;
                                             }
-                                            else
+                                            loc -= 9;
+                                            left -= 8;
+                                        }
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+                                    }
+                                }
+                                catch { }
+                                try
+                                {
+                                    if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
+                                            figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
+                                            figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
+                                    {
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                            figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
+                                            figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
+                                            figur[loc - 7] != "UP8")
+                                        {
+                                            Frame();
+                                            top -= 4;
+                                            for (int i = 0; i < 4; i++)
                                             {
-                                                Console.ForegroundColor = ConsoleColor.Yellow;
-                                                Console.BackgroundColor = ConsoleColor.Yellow;
+                                                left += 8;
+
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 15;
                                             }
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
-                                            left -= 7;
-                                            Console.SetCursorPosition(left, top + i);
-                                            Console.Write("-");
+                                            loc -= 7;
                                             left += 8;
                                         }
-                                        loc += 7;
-                                        left -= 8;
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
                                     }
-                                    loc = buff_loc;
-                                    left = buff_left;
-                                    top = buff_top;
-
                                 }
+                                catch { }
+                                try
+                                {
+                                    if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
+                                            figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
+                                            figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
+                                    {
+
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
+                                            figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
+                                            figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
+                                            figur[loc + 9] != "UP8")
+                                        {
+                                            Frame();
+                                            top += 4;
+                                            for (int i = 0; i < 4; i++)
+                                            {
+                                                left += 8;
+
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 15;
+                                            }
+                                            loc += 9;
+                                            left += 8;
+                                        }
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+                                    }
+                                }
+                                catch { }
+                                try
+                                {
+                                    if (((figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
+                                            figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8") || (figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
+                                            figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")))
+                                    {
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
+                                            figur[loc + 7] != "LDELEPHANT" && figur[loc + 7] != "RDELEPHANT" && figur[loc + 7] != "LDTOWER" && figur[loc + 7] != "RDTOWER" && figur[loc + 7] != "UP1" &&
+                                            figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
+                                            figur[loc + 7] != "UP8")
+                                        {
+                                            Frame();
+                                            top += 4;
+                                            for (int i = 0; i < 4; i++)
+                                            {
+                                                left -= 1;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 8;
+                                            }
+                                            loc += 7;
+                                            left -= 8;
+                                        }
+                                        loc = buff_loc;
+                                        left = buff_left;
+                                        top = buff_top;
+
+                                    }
+                                }
+                                catch { }
+
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
+
                             }
-                            catch { }
-
-                            Console.SetCursorPosition(0, 0);
-                            Console.ResetColor();
-
-
 
                         }
 
@@ -3242,9 +3446,14 @@ namespace Chess
 
 
 
+
+
                             Console.SetCursorPosition(0, 0);
                             Console.ReadKey();
                             Console.ResetColor();
+
+
+
 
 
 
