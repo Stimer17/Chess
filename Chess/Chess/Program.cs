@@ -2428,11 +2428,6 @@ namespace Chess
                                             figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
                                             figur[loc + 7] != "UP8")
                                         {
-                                            if (figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
-                                            figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
-                                            figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
-                                            {
-
                                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                                                 top += 4;
@@ -2449,7 +2444,6 @@ namespace Chess
                                                 loc += 7;
                                                 left -= 8;
                                             }
-                                        }
                                         loc = buff_loc;
                                         left = buff_left;
                                         top = buff_top;
