@@ -2591,7 +2591,7 @@ namespace Chess
                                                 figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
                                                 figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
                                     {
-                                        count = 0;
+                                        count = 7;
                                         while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
                                         figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
                                         figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
@@ -2613,8 +2613,6 @@ namespace Chess
                                             for (int i = 0; i < 4; i++)
                                             {
                                                 left += 8;
-                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
                                                 Console.SetCursorPosition(left, top + i);
                                                 Console.Write("-");
                                                 left += 7;
@@ -2633,51 +2631,98 @@ namespace Chess
                                 
                                 }
                                 catch { }
+
                                 try
                                 {
                                     if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
-                                                figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
-                                                figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
+                                            figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
+                                            figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
                                     {
-                                        keypress = Console.ReadKey();
-                                        if (keypress.Key == ConsoleKey.Enter)
+                                        count = 14;
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
+                                            figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
+                                            figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
+                                            figur[loc + 9] != "UP8")
                                         {
-                                            goto m;
+                                            keypress = Console.ReadKey();
+                                            if (keypress.Key == ConsoleKey.Enter)
+                                            {
+                                                goto m;
+                                            }
+                                            else if (keypress.Key == ConsoleKey.Escape)
+                                            {
+                                                tru = false;
+                                                goto n;
+                                            }
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                            top += 4;
+                                            for (int i = 0; i < 4; i++)
+                                            {
+                                                left += 8;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 15;
+                                            }
+                                            loc += 9;
+                                            left += 8;
+                                            count++;
                                         }
-                                        else if (keypress.Key == ConsoleKey.Escape)
-                                        {
-                                            tru = false;
-                                            goto n;
-                                        }
-                                        else if (keypress.Key == ConsoleKey.A)
-                                        {
-                                        }
+                                        left = buff_left;
+                                        top = buff_top;
+                                        loc = buff_loc;
                                     }
                                 }
                                 catch { }
                                 try
                                 {
                                     if (figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
-                                                figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
-                                                figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
+                                            figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
+                                            figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
                                     {
-                                        keypress = Console.ReadKey();
-                                        if (keypress.Key == ConsoleKey.Enter)
+                                        count = 21;
+                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
+                                            figur[loc + 7] != "LDELEPHANT" && figur[loc + 7] != "RDELEPHANT" && figur[loc + 7] != "LDTOWER" && figur[loc + 7] != "RDTOWER" && figur[loc + 7] != "UP1" &&
+                                            figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
+                                            figur[loc + 7] != "UP8")
                                         {
-                                            goto m;
+                                            keypress = Console.ReadKey();
+                                            if (keypress.Key == ConsoleKey.Enter)
+                                            {
+                                                goto m;
+                                            }
+                                            else if (keypress.Key == ConsoleKey.Escape)
+                                            {
+                                                tru = false;
+                                                goto n;
+                                            }
+                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                                            top += 4;
+                                            for (int i = 0; i < 4; i++)
+                                            {
+                                                left -= 1;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left -= 7;
+                                                Console.SetCursorPosition(left, top + i);
+                                                Console.Write("-");
+                                                left += 8;
+                                            }
+                                            loc += 7;
+                                            left -= 8;
+                                            count++;
                                         }
-                                        else if (keypress.Key == ConsoleKey.Escape)
-                                        {
-                                            tru = false;
-                                            goto n;
-                                        }
-                                        else if (keypress.Key == ConsoleKey.A)
-                                        {
-                                        }
+                                        left = buff_left;
+                                        top = buff_top;
+                                        loc = buff_loc;
                                     }
+
                                 }
                                 catch { }
-
 
 
 
