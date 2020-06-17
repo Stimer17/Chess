@@ -2303,7 +2303,7 @@ namespace Chess
                             buff_left = left;
                             buff_top = top;
                             int buff_loc = loc;
-                            int count = 17;
+                            int count = 29;
                             bool tru = true;
                             while (tru == true)
                             {
@@ -2319,27 +2319,6 @@ namespace Chess
                                             figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                             figur[loc - 9] != "UP8")
                                         {
-                                            if (figur[loc - 9] == "Null" || figur[loc - 9] == "DP1" || figur[loc - 9] == "DP2" || figur[loc - 9] == "DP3" || figur[loc - 9] == "DP4" || figur[loc - 9] == "DP5" ||
-                                            figur[loc - 9] == "DP6" || figur[loc - 9] == "DP7" || figur[loc - 9] == "DP8" || figur[loc - 9] == "LUTOWER" || figur[loc - 9] == "LUHORSE" || figur[loc - 9] == "LUELEPHANT" ||
-                                            figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                                                top -= 4;
-                                                for (int i = 0; i < 4; i++)
-                                                {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
-                                                }
-                                                goto zero;
-                                            }
-                                            else
-                                            {
                                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                                                 top -= 4;
@@ -2355,15 +2334,15 @@ namespace Chess
                                                 }
                                                 loc -= 9;
                                                 left -= 8;
-                                            }
                                         }
-                                    zero:
                                         loc = buff_loc;
                                         left = buff_left;
                                         top = buff_top;
                                     }
                                 }
                                 catch { }
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
                                 try
                                 {
                                     if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
@@ -2375,27 +2354,7 @@ namespace Chess
                                             figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
                                             figur[loc - 7] != "UP8")
                                         {
-                                            if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
-                                            figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
-                                            figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                                                top -= 4;
-                                                for (int i = 0; i < 4; i++)
-                                                {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
-                                                }
-                                                goto first;
-                                            }
-                                            else
-                                            {
+                                            
                                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                                                 top -= 4;
@@ -2411,15 +2370,15 @@ namespace Chess
                                                 }
                                                 loc -= 7;
                                                 left += 8;
-                                            }
                                         }
-                                    first:
                                         loc = buff_loc;
                                         left = buff_left;
                                         top = buff_top;
                                     }
                                 }
                                 catch { }
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
                                 try
                                 {
                                     if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
@@ -2432,27 +2391,7 @@ namespace Chess
                                             figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
                                             figur[loc + 9] != "UP8")
                                         {
-                                            if (figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
-                                            figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
-                                            figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
-                                            {
-                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                                                top += 4;
-                                                for (int i = 0; i < 4; i++)
-                                                {
-                                                    left += 8;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 15;
-                                                }
-                                                goto second;
-                                            }
-                                            else
-                                            {
+                                            
                                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                                                 top += 4;
@@ -2468,16 +2407,16 @@ namespace Chess
                                                 }
                                                 loc += 9;
                                                 left += 8;
-                                            }
 
                                         }
-                                    second:
                                         loc = buff_loc;
                                         left = buff_left;
                                         top = buff_top;
                                     }
                                 }
                                 catch { }
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
                                 try
                                 {
                                     if (figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
@@ -2493,23 +2432,7 @@ namespace Chess
                                             figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
                                             figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
                                             {
-                                                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                                                Console.BackgroundColor = ConsoleColor.DarkMagenta;
-                                                top += 4;
-                                                for (int i = 0; i < 4; i++)
-                                                {
-                                                    left -= 1;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left -= 7;
-                                                    Console.SetCursorPosition(left, top + i);
-                                                    Console.Write("-");
-                                                    left += 8;
-                                                }
-                                                goto third;
-                                            }
-                                            else
-                                            {
+
                                                 Console.ForegroundColor = ConsoleColor.DarkGreen;
                                                 Console.BackgroundColor = ConsoleColor.DarkGreen;
                                                 top += 4;
@@ -2527,14 +2450,14 @@ namespace Chess
                                                 left -= 8;
                                             }
                                         }
-                                    third:
                                         loc = buff_loc;
                                         left = buff_left;
                                         top = buff_top;
                                     }
                                 }
                                 catch { }
-
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
 
 
 
@@ -2560,24 +2483,27 @@ namespace Chess
                                                 tru = false;
                                                 goto n;
                                             }
-                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            top -= 4;
-                                            for (int i = 0; i < 4; i++)
+                                            if (keypress.Key == ConsoleKey.A)
                                             {
-                                                left += 8;
-                                                Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                                Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 15;
+                                                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                                                top -= 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left -= 1;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 8;
+                                                }
+                                                loc -= 9;
+                                                left -= 8;
+                                                Console.SetCursorPosition(0, 0);
+                                                Console.ResetColor();
+                                                count++;
                                             }
-                                            loc -= 7;
-                                            left += 8;
-                                            count++;
                                         }
                                         left = buff_left;
                                         top = buff_top;
@@ -2585,6 +2511,8 @@ namespace Chess
                                     }
                                 }
                                 catch {  }
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
                                 try
                                 {
                                     if (figur[loc - 7] == "Null" || figur[loc - 7] == "DP1" || figur[loc - 7] == "DP2" || figur[loc - 7] == "DP3" || figur[loc - 7] == "DP4" || figur[loc - 7] == "DP5" ||
@@ -2607,22 +2535,27 @@ namespace Chess
                                                 tru = false;
                                                 goto n;
                                             }
-                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            top -= 4;
-                                            for (int i = 0; i < 4; i++)
+                                            if (keypress.Key == ConsoleKey.A)
                                             {
+                                                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                                                top -= 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left += 8;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 15;
+                                                }
+                                                loc -= 7;
                                                 left += 8;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 15;
+                                                Console.SetCursorPosition(0, 0);
+                                                Console.ResetColor();
+                                                count++;
                                             }
-                                            loc -= 7;
-                                            left += 8;
-                                            count++;
                                         }
                                         left = buff_left;
                                         top = buff_top;
@@ -2631,7 +2564,8 @@ namespace Chess
                                 
                                 }
                                 catch { }
-
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
                                 try
                                 {
                                     if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
@@ -2654,22 +2588,27 @@ namespace Chess
                                                 tru = false;
                                                 goto n;
                                             }
-                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            top += 4;
-                                            for (int i = 0; i < 4; i++)
+                                            if (keypress.Key == ConsoleKey.A)
                                             {
+                                                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                                                top += 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left += 8;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 15;
+                                                }
+                                                loc += 9;
                                                 left += 8;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 15;
+                                                Console.SetCursorPosition(0, 0);
+                                                Console.ResetColor();
+                                                count++;
                                             }
-                                            loc += 9;
-                                            left += 8;
-                                            count++;
                                         }
                                         left = buff_left;
                                         top = buff_top;
@@ -2677,6 +2616,8 @@ namespace Chess
                                     }
                                 }
                                 catch { }
+                                Console.SetCursorPosition(0, 0);
+                                Console.ResetColor();
                                 try
                                 {
                                     if (figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
@@ -2699,22 +2640,27 @@ namespace Chess
                                                 tru = false;
                                                 goto n;
                                             }
-                                            Console.ForegroundColor = ConsoleColor.DarkGreen;
-                                            Console.BackgroundColor = ConsoleColor.DarkGreen;
-                                            top += 4;
-                                            for (int i = 0; i < 4; i++)
+                                            if (keypress.Key == ConsoleKey.A)
                                             {
-                                                left -= 1;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 8;
+                                                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                                                Console.BackgroundColor = ConsoleColor.DarkBlue;
+                                                top += 4;
+                                                for (int i = 0; i < 4; i++)
+                                                {
+                                                    left -= 1;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left -= 7;
+                                                    Console.SetCursorPosition(left, top + i);
+                                                    Console.Write("-");
+                                                    left += 8;
+                                                }
+                                                loc += 7;
+                                                left -= 8;
+                                                Console.SetCursorPosition(0, 0);
+                                                Console.ResetColor();
+                                                count++;
                                             }
-                                            loc += 7;
-                                            left -= 8;
-                                            count++;
                                         }
                                         left = buff_left;
                                         top = buff_top;
