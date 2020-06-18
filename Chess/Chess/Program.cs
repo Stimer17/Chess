@@ -2292,7 +2292,6 @@ namespace Chess
                             }
                             Console.SetCursorPosition(0, 0);
                             Console.ResetColor();
-
                         }
 
 
@@ -2314,7 +2313,7 @@ namespace Chess
                                             figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER")
                                     {
 
-                                        while ((left > 20 && left < 77) && (top - 4 > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                        while ((left - 1 > 20 && left < 77) && (top - 4 > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
                                             figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
                                             figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                             figur[loc - 9] != "UP8")
@@ -2349,7 +2348,7 @@ namespace Chess
                                             figur[loc - 7] == "DP6" || figur[loc - 7] == "DP7" || figur[loc - 7] == "DP8" || figur[loc - 7] == "LUTOWER" || figur[loc - 7] == "LUHORSE" || figur[loc - 7] == "LUELEPHANT" ||
                                             figur[loc - 7] == "DF" || figur[loc - 7] == "RUELEPHANT" || figur[loc - 7] == "RUHORSE" || figur[loc - 7] == "RUTOWER")
                                     {
-                                        while ((left > 20 && left < 76) && (top - 4 > 5 && top < 35) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                        while ((left > 19 && left < 76) && (top - 4 > 5 && top < 35) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
                                             figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
                                             figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
                                             figur[loc - 7] != "UP8")
@@ -2386,7 +2385,7 @@ namespace Chess
                                             figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
                                     {
 
-                                        while ((left > 20 && left < 76) && (top > 5 && top + 4 < 35) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
+                                        while ((left > 19 && left < 76) && (top > 5 && top + 4 < 35) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
                                             figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
                                             figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
                                             figur[loc + 9] != "UP8")
@@ -2462,7 +2461,7 @@ namespace Chess
                                                 figur[loc - 9] == "DF" || figur[loc - 9] == "RUELEPHANT" || figur[loc - 9] == "RUHORSE" || figur[loc - 9] == "RUTOWER" && (left > 20 && left < 77) && (top > 5 && top < 35))
                                     {
                                         count = 0;
-                                        while ((left > 20 && left < 77) && (top > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                        while ((left - 1 > 20 && left < 77) && (top > 6 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
                                             figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
                                             figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                             figur[loc - 9] != "UP8")
@@ -2530,10 +2529,12 @@ namespace Chess
                                     {
                                         Console.SetCursorPosition(0, 0);
                                         keypress = Console.ReadKey();
+                                        if (keypress.Key == ConsoleKey.Enter) { goto m; }
+                                        else if (keypress.Key == ConsoleKey.Escape) { goto n; }
                                         Console.ResetColor();
                                         try
                                         {
-                                            while ((left > 20 && left < 77) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            while ((left - 1 > 20 && left < 77) && (top > 5 && top < 38) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
                                                 figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
                                                 figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                                 figur[loc - 9] != "UP8")
@@ -2563,7 +2564,7 @@ namespace Chess
                                         loc = buff_loc;
 
                                         count = 7;
-                                        while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                        while ((left > 19 && left < 76) && (top  > 7 && top < 35) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
                                         figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
                                         figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
                                         figur[loc - 7] != "UP8")
@@ -2592,7 +2593,7 @@ namespace Chess
                                                 tru = false;
                                                 goto n;
                                             }
-                                            if (keypress.Key == ConsoleKey.A)
+                                            else if (keypress.Key == ConsoleKey.A)
                                             {
                                                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                                                 Console.BackgroundColor = ConsoleColor.DarkBlue;
@@ -2630,11 +2631,13 @@ namespace Chess
                                             figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER" && (left > 20 && left < 76) && (top > 5 && top < 35))
                                     {
                                         Console.SetCursorPosition(0, 0);
-                                        
+                                        keypress = Console.ReadKey();
                                         Console.ResetColor();
+                                        if (keypress.Key == ConsoleKey.Enter) { goto m; }
+                                        if (keypress.Key == ConsoleKey.Escape) { goto n; }
                                         try
                                         {
-                                            while ((left > 20 && left < 76) && (top > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            while ((left - 1 > 20 && left < 76) && (top > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
                                                 figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
                                                 figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                                 figur[loc - 9] != "UP8")
@@ -2664,7 +2667,7 @@ namespace Chess
                                         loc = buff_loc;
                                         try
                                         {
-                                            while ((left > 20 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                            while ((left > 19 && left < 76) && (top > 5 && top < 38) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
                                             figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
                                             figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
                                             figur[loc - 7] != "UP8")
@@ -2694,8 +2697,10 @@ namespace Chess
                                         loc = buff_loc;
 
 
+
+
                                         count = 14;
-                                        while ((left > 20 && left < 76) && (top > 5 && top < 35) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
+                                        while ((left > 19 && left < 76) && (top > 5 && top < 35) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
                                             figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
                                             figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
                                             figur[loc + 9] != "UP8")
@@ -2762,11 +2767,13 @@ namespace Chess
                                             figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER" && (left > 20 && left < 77) && (top > 5 && top < 35))
                                     {
                                         Console.SetCursorPosition(0, 0);
-                                        Console.ReadKey();
+                                        keypress = Console.ReadKey();
                                         Console.ResetColor();
+                                        if (keypress.Key == ConsoleKey.Enter) { goto m; }
+                                        if (keypress.Key == ConsoleKey.Escape) { goto n; }
                                         try
                                         {
-                                            while ((left > 20 && left < 77) && (top > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            while ((left - 1 > 20 && left < 77) && (top  > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
                                                 figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
                                                 figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                                 figur[loc - 9] != "UP8")
@@ -2796,7 +2803,7 @@ namespace Chess
                                         loc = buff_loc;
                                         try
                                         {
-                                            while ((left > 20 && left < 76) && (top > 5 && top < 35) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
+                                            while ((left > 19 && left < 76) && (top > 5 && top < 35) && figur[loc - 7] != "LDHORSE" && figur[loc - 7] != "RDHORSE" &&
                                             figur[loc - 7] != "LDELEPHANT" && figur[loc - 7] != "RDELEPHANT" && figur[loc - 7] != "LDTOWER" && figur[loc - 7] != "RDTOWER" && figur[loc - 7] != "UP1" &&
                                             figur[loc - 7] != "UP2" && figur[loc - 7] != "UP3" && figur[loc - 7] != "UP4" && figur[loc - 7] != "UP5" && figur[loc - 7] != "UP6" && figur[loc - 7] != "UP7" &&
                                             figur[loc - 7] != "UP8")
@@ -2826,7 +2833,7 @@ namespace Chess
                                         loc = buff_loc;
                                         try
                                         {
-                                            while ((left > 20 && left < 76) && (top > 5 && top < 35) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
+                                            while ((left  - 1 > 20 && left < 76) && (top > 5 && top < 35) && figur[loc + 9] != "LDHORSE" && figur[loc + 9] != "RDHORSE" &&
                                                figur[loc + 9] != "LDELEPHANT" && figur[loc + 9] != "RDELEPHANT" && figur[loc + 9] != "LDTOWER" && figur[loc + 9] != "RDTOWER" && figur[loc + 9] != "UP1" &&
                                                figur[loc + 9] != "UP2" && figur[loc + 9] != "UP3" && figur[loc + 9] != "UP4" && figur[loc + 9] != "UP5" && figur[loc + 9] != "UP6" && figur[loc + 9] != "UP7" &&
                                                figur[loc + 9] != "UP8")
@@ -2857,7 +2864,7 @@ namespace Chess
 
 
                                         count = 21;
-                                        while ((left > 20 && left < 77) && (top > 5 && top < 35) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
+                                        while ((left  - 1 > 20 && left < 77) && (top > 5 && top < 35) && figur[loc + 7] != "LDHORSE" && figur[loc + 7] != "RDHORSE" &&
                                             figur[loc + 7] != "LDELEPHANT" && figur[loc + 7] != "RDELEPHANT" && figur[loc + 7] != "LDTOWER" && figur[loc + 7] != "RDTOWER" && figur[loc + 7] != "UP1" &&
                                             figur[loc + 7] != "UP2" && figur[loc + 7] != "UP3" && figur[loc + 7] != "UP4" && figur[loc + 7] != "UP5" && figur[loc + 7] != "UP6" && figur[loc + 7] != "UP7" &&
                                             figur[loc + 7] != "UP8")
@@ -3062,11 +3069,7 @@ namespace Chess
                                         }
                                         catch { }
                                     }
-
-
-
-
-                                    if (count == 8)
+                                    else if (count == 8)
                                     {
                                         try
                                         {
@@ -3201,6 +3204,281 @@ namespace Chess
                                         }
                                         catch { }
                                     }
+                                    else if (count == 15)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 9] == "Null" || figur[loc + 9] == "DP1" || figur[loc + 9] == "DP2" || figur[loc + 9] == "DP3" || figur[loc + 9] == "DP4" || figur[loc + 9] == "DP5" ||
+                                                figur[loc + 9] == "DP6" || figur[loc + 9] == "DP7" || figur[loc + 9] == "DP8" || figur[loc + 9] == "LUTOWER" || figur[loc + 9] == "LUHORSE" || figur[loc + 9] == "LUELEPHANT" ||
+                                                figur[loc + 9] == "DF" || figur[loc + 9] == "RUELEPHANT" || figur[loc + 9] == "RUHORSE" || figur[loc + 9] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 9] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 9] = "RDELEPHANT"; }
+                                                Empty(left + 8, top + 4);
+                                                Elephant(left + 8, top + 4, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 16)
+                                    {
+
+                                        try
+                                        {
+                                            if (figur[loc + 18] == "Null" || figur[loc + 18] == "DP1" || figur[loc + 18] == "DP2" || figur[loc + 18] == "DP3" || figur[loc + 18] == "DP4" || figur[loc + 18] == "DP5" ||
+                                                figur[loc + 18] == "DP6" || figur[loc + 18] == "DP7" || figur[loc + 18] == "DP8" || figur[loc + 18] == "LUTOWER" || figur[loc + 18] == "LUHORSE" || figur[loc + 18] == "LUELEPHANT" ||
+                                                figur[loc + 18] == "DF" || figur[loc + 18] == "RUELEPHANT" || figur[loc + 18] == "RUHORSE" || figur[loc + 18] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 18] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 18] = "RDELEPHANT"; }
+                                                Empty(left + 16, top + 8);
+                                                Elephant(left + 16, top + 8, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 17)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 27] == "Null" || figur[loc + 27] == "DP1" || figur[loc + 27] == "DP2" || figur[loc + 27] == "DP3" || figur[loc + 27] == "DP4" || figur[loc + 27] == "DP5" ||
+                                                figur[loc + 27] == "DP6" || figur[loc + 27] == "DP7" || figur[loc + 27] == "DP8" || figur[loc + 27] == "LUTOWER" || figur[loc + 27] == "LUHORSE" || figur[loc + 27] == "LUELEPHANT" ||
+                                                figur[loc + 27] == "DF" || figur[loc + 27] == "RUELEPHANT" || figur[loc + 27] == "RUHORSE" || figur[loc + 27] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 27] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 27] = "RDELEPHANT"; }
+                                                Empty(left + 24, top + 12);
+                                                Elephant(left + 24, top + 12, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+
+                                    }
+                                    else if (count == 18)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 36] == "Null" || figur[loc + 36] == "DP1" || figur[loc + 36] == "DP2" || figur[loc + 36] == "DP3" || figur[loc + 36] == "DP4" || figur[loc + 36] == "DP5" ||
+                                                figur[loc + 36] == "DP6" || figur[loc + 36] == "DP7" || figur[loc + 36] == "DP8" || figur[loc + 36] == "LUTOWER" || figur[loc + 36] == "LUHORSE" || figur[loc + 36] == "LUELEPHANT" ||
+                                                figur[loc + 36] == "DF" || figur[loc + 36] == "RUELEPHANT" || figur[loc + 36] == "RUHORSE" || figur[loc + 36] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 36] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 36] = "RDELEPHANT"; }
+                                                Empty(left + 32, top + 16);
+                                                Elephant(left + 32, top + 16, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 19)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 45] == "Null" || figur[loc + 45] == "DP1" || figur[loc + 45] == "DP2" || figur[loc + 45] == "DP3" || figur[loc + 45] == "DP4" || figur[loc + 45] == "DP5" ||
+                                                figur[loc + 45] == "DP6" || figur[loc + 45] == "DP7" || figur[loc + 45] == "DP8" || figur[loc + 45] == "LUTOWER" || figur[loc + 45] == "LUHORSE" || figur[loc + 45] == "LUELEPHANT" ||
+                                                figur[loc + 45] == "DF" || figur[loc + 45] == "RUELEPHANT" || figur[loc + 45] == "RUHORSE" || figur[loc + 45] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc - 45] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc - 45] = "RDELEPHANT"; }
+                                                Empty(left + 40, top + 20);
+                                                Elephant(left + 40, top + 20, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 20)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 54] == "Null" || figur[loc + 54] == "DP1" || figur[loc + 54] == "DP2" || figur[loc + 54] == "DP3" || figur[loc + 54] == "DP4" || figur[loc + 54] == "DP5" ||
+                                                figur[loc + 54] == "DP6" || figur[loc + 54] == "DP7" || figur[loc + 54] == "DP8" || figur[loc + 54] == "LUTOWER" || figur[loc + 54] == "LUHORSE" || figur[loc + 54] == "LUELEPHANT" ||
+                                                figur[loc + 54] == "DF" || figur[loc + 54] == "RUELEPHANT" || figur[loc + 54] == "RUHORSE" || figur[loc + 54] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 54] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 54] = "RDELEPHANT"; }
+                                                Empty(left + 48, top + 24);
+                                                Elephant(left + 48, top + 24, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 21)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 63] == "Null" || figur[loc + 63] == "DP1" || figur[loc + 63] == "DP2" || figur[loc + 63] == "DP3" || figur[loc + 63] == "DP4" || figur[loc + 63] == "DP5" ||
+                                                figur[loc + 63] == "DP6" || figur[loc + 63] == "DP7" || figur[loc + 63] == "DP8" || figur[loc + 63] == "LUTOWER" || figur[loc + 63] == "LUHORSE" || figur[loc + 63] == "LUELEPHANT" ||
+                                                figur[loc + 63] == "DF" || figur[loc + 63] == "RUELEPHANT" || figur[loc + 63] == "RUHORSE" || figur[loc + 63] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 63] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 63] = "RDELEPHANT"; }
+                                                Empty(left + 56, top + 28);
+                                                Elephant(left + 56, top + 28, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 22)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 7] == "Null" || figur[loc + 7] == "DP1" || figur[loc + 7] == "DP2" || figur[loc + 7] == "DP3" || figur[loc + 7] == "DP4" || figur[loc + 7] == "DP5" ||
+                                                figur[loc + 7] == "DP6" || figur[loc + 7] == "DP7" || figur[loc + 7] == "DP8" || figur[loc + 7] == "LUTOWER" || figur[loc + 7] == "LUHORSE" || figur[loc + 7] == "LUELEPHANT" ||
+                                                figur[loc + 7] == "DF" || figur[loc + 7] == "RUELEPHANT" || figur[loc + 7] == "RUHORSE" || figur[loc + 7] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 7] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 7] = "RDELEPHANT"; }
+                                                Empty(left - 8, top + 4);
+                                                Elephant(left - 8, top + 4, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 23)
+                                    {
+
+                                        try
+                                        {
+                                            if (figur[loc + 14] == "Null" || figur[loc + 14] == "DP1" || figur[loc + 14] == "DP2" || figur[loc + 14] == "DP3" || figur[loc + 14] == "DP4" || figur[loc + 14] == "DP5" ||
+                                                figur[loc + 14] == "DP6" || figur[loc + 14] == "DP7" || figur[loc + 14] == "DP8" || figur[loc + 14] == "LUTOWER" || figur[loc + 14] == "LUHORSE" || figur[loc + 14] == "LUELEPHANT" ||
+                                                figur[loc + 14] == "DF" || figur[loc + 14] == "RUELEPHANT" || figur[loc + 14] == "RUHORSE" || figur[loc + 14] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 14] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 14] = "RDELEPHANT"; }
+                                                Empty(left - 16, top + 8);
+                                                Elephant(left - 16, top + 8, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 24)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 21] == "Null" || figur[loc + 21] == "DP1" || figur[loc + 21] == "DP2" || figur[loc + 21] == "DP3" || figur[loc + 21] == "DP4" || figur[loc + 21] == "DP5" ||
+                                                figur[loc + 21] == "DP6" || figur[loc + 21] == "DP7" || figur[loc + 21] == "DP8" || figur[loc + 21] == "LUTOWER" || figur[loc + 21] == "LUHORSE" || figur[loc + 21] == "LUELEPHANT" ||
+                                                figur[loc + 21] == "DF" || figur[loc + 21] == "RUELEPHANT" || figur[loc + 21] == "RUHORSE" || figur[loc + 21] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 21] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 21] = "RDELEPHANT"; }
+                                                Empty(left - 24, top + 12);
+                                                Elephant(left - 24, top + 12, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+
+                                    }
+                                    else if (count == 25)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 28] == "Null" || figur[loc + 28] == "DP1" || figur[loc + 28] == "DP2" || figur[loc + 28] == "DP3" || figur[loc + 28] == "DP4" || figur[loc + 28] == "DP5" ||
+                                                figur[loc + 28] == "DP6" || figur[loc + 28] == "DP7" || figur[loc + 28] == "DP8" || figur[loc + 28] == "LUTOWER" || figur[loc + 28] == "LUHORSE" || figur[loc + 28] == "LUELEPHANT" ||
+                                                figur[loc + 28] == "DF" || figur[loc + 28] == "RUELEPHANT" || figur[loc + 28] == "RUHORSE" || figur[loc + 28] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 28] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 28] = "RDELEPHANT"; }
+                                                Empty(left - 32, top + 16);
+                                                Elephant(left - 32, top + 16, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 26)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 35] == "Null" || figur[loc + 35] == "DP1" || figur[loc + 35] == "DP2" || figur[loc + 35] == "DP3" || figur[loc + 35] == "DP4" || figur[loc + 35] == "DP5" ||
+                                                figur[loc + 35] == "DP6" || figur[loc + 35] == "DP7" || figur[loc + 35] == "DP8" || figur[loc + 35] == "LUTOWER" || figur[loc + 35] == "LUHORSE" || figur[loc + 35] == "LUELEPHANT" ||
+                                                figur[loc + 35] == "DF" || figur[loc + 35] == "RUELEPHANT" || figur[loc + 35] == "RUHORSE" || figur[loc + 35] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 35] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 35] = "RDELEPHANT"; }
+                                                Empty(left - 40, top + 20);
+                                                Elephant(left - 40, top + 20, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 27)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 42] == "Null" || figur[loc + 42] == "DP1" || figur[loc + 42] == "DP2" || figur[loc + 42] == "DP3" || figur[loc + 42] == "DP4" || figur[loc + 42] == "DP5" ||
+                                                figur[loc + 42] == "DP6" || figur[loc + 42] == "DP7" || figur[loc + 42] == "DP8" || figur[loc + 42] == "LUTOWER" || figur[loc + 42] == "LUHORSE" || figur[loc + 42] == "LUELEPHANT" ||
+                                                figur[loc + 42] == "DF" || figur[loc + 42] == "RUELEPHANT" || figur[loc + 42] == "RUHORSE" || figur[loc + 42] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 42] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 42] = "RDELEPHANT"; }
+                                                Empty(left - 48, top + 24);
+                                                Elephant(left - 48, top + 24, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+                                    else if (count == 28)
+                                    {
+                                        try
+                                        {
+                                            if (figur[loc + 49] == "Null" || figur[loc + 49] == "DP1" || figur[loc + 49] == "DP2" || figur[loc + 49] == "DP3" || figur[loc + 49] == "DP4" || figur[loc + 49] == "DP5" ||
+                                                figur[loc + 49] == "DP6" || figur[loc + 49] == "DP7" || figur[loc + 49] == "DP8" || figur[loc + 49] == "LUTOWER" || figur[loc + 49] == "LUHORSE" || figur[loc + 49] == "LUELEPHANT" ||
+                                                figur[loc + 49] == "DF" || figur[loc + 49] == "RUELEPHANT" || figur[loc + 49] == "RUHORSE" || figur[loc + 49] == "RUTOWER")
+                                            {
+                                                Empty(left, top);
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 49] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 49] = "RDELEPHANT"; }
+                                                Empty(left - 56, top + 28);
+                                                Elephant(left - 56, top + 28, color_chess);
+                                                figur[loc] = "Null";
+                                                tru = false;
+                                            }
+                                        }
+                                        catch { }
+                                    }
+
+
+
+
+
 
 
                                 }
