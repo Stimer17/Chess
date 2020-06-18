@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace Chess
 {
@@ -2773,7 +2774,7 @@ namespace Chess
                                         if (keypress.Key == ConsoleKey.Escape) { goto n; }
                                         try
                                         {
-                                            while ((left - 1 > 20 && left < 77) && (top  > 5 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
+                                            while ((left - 1 > 20 && left < 77) && (top  > 6 && top < 35) && figur[loc - 9] != "LDHORSE" && figur[loc - 9] != "RDHORSE" &&
                                                 figur[loc - 9] != "LDELEPHANT" && figur[loc - 9] != "RDELEPHANT" && figur[loc - 9] != "LDTOWER" && figur[loc - 9] != "RDTOWER" && figur[loc - 9] != "UP1" &&
                                                 figur[loc - 9] != "UP2" && figur[loc - 9] != "UP3" && figur[loc - 9] != "UP4" && figur[loc - 9] != "UP5" && figur[loc - 9] != "UP6" && figur[loc - 9] != "UP7" &&
                                                 figur[loc - 9] != "UP8")
@@ -3291,8 +3292,8 @@ namespace Chess
                                                 figur[loc + 45] == "DF" || figur[loc + 45] == "RUELEPHANT" || figur[loc + 45] == "RUHORSE" || figur[loc + 45] == "RUTOWER")
                                             {
                                                 Empty(left, top);
-                                                if (figur[loc] == "LDELEPHANT") { figur[loc - 45] = "LDELEPHANT"; }
-                                                if (figur[loc] == "RDELEPHANT") { figur[loc - 45] = "RDELEPHANT"; }
+                                                if (figur[loc] == "LDELEPHANT") { figur[loc + 45] = "LDELEPHANT"; }
+                                                if (figur[loc] == "RDELEPHANT") { figur[loc + 45] = "RDELEPHANT"; }
                                                 Empty(left + 40, top + 20);
                                                 Elephant(left + 40, top + 20, color_chess);
                                                 figur[loc] = "Null";
@@ -3486,105 +3487,118 @@ namespace Chess
                                 left = buff_left;
                                 top = buff_top;
                                 loc = buff_loc;
+                                bool check = true;
+                                top += 4;
                                 try
                                 {
-                                        while ((left - 8 > 19 && left < 76) && (top - 4 > 5 && top < 35))
+                                    
+                                    while (((left - 1 > 19 && left < 77) && (top - 4 > 5 && top < 39)))
+                                    {
+                                        if (check == true) { top -= 4;check = false; }
+                                        Frame();
+                                        top -= 4;
+                                        for (int i = 0; i < 4; i++)
                                         {
-                                            Frame();
-                                            top -= 4;
-                                            for (int i = 0; i < 4; i++)
-                                            {
-                                                left -= 1;
+                                            left -= 1;
 
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 8;
-                                            }
-                                            loc -= 9;
-                                            left -= 8;
-                                        }
-                                        loc = buff_loc;
-                                        left = buff_left;
-                                        top = buff_top;
-                                }
-                                catch { }
-                                try
-                                {
-                                        while ((left > 19 && left + 8 < 77) && (top - 4 > 5 && top < 35))
-                                        {
-                                            Frame();
-                                            top -= 4;
-                                            for (int i = 0; i < 4; i++)
-                                            {
-                                                left += 8;
-
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 15;
-                                            }
-                                            loc -= 7;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
+                                            left -= 7;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
                                             left += 8;
                                         }
-                                        loc = buff_loc;
-                                        left = buff_left;
-                                        top = buff_top;
+                                        loc -= 9;
+                                        left -= 8;
+                                    }
+                                    loc = buff_loc;
+                                    left = buff_left;
+                                    top = buff_top;
                                 }
-                                catch { }
+                                catch { top -= 4; }
+                                
+                                top += 4;
+                                check = true;
                                 try
                                 {
-                                        while ((left > 19 && left + 8 < 77) && (top > 5 && top + 4 < 35))
+                                    while (((left > 19 && left + 8 < 77) && (top - 4 > 5 && top < 39)))
+                                    {
+                                        if (check == true) { top -= 4; check = false; }
+                                        Frame();
+                                        top -= 4;
+                                        for (int i = 0; i < 4; i++)
                                         {
-                                            Frame();
-                                            top += 4;
-                                            for (int i = 0; i < 4; i++)
-                                            {
-                                                left += 8;
+                                            left += 8;
 
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 15;
-                                            }
-                                            loc += 9;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
+                                            left += 7;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
+                                            left -= 15;
+                                        }
+                                        loc -= 7;
+                                        left += 8;
+                                    }
+                                    loc = buff_loc;
+                                    left = buff_left;
+                                    top = buff_top;
+                                }
+                                catch { top -= 4; }
+
+                                top += 4;
+                                check = true;
+                                try
+                                {
+                                    while (((left > 19 && left + 8 < 77) && (top - 4> 5 && top + 4 < 35)))
+                                    {
+                                        if (check == true) { top -= 4; check = false; }
+                                        Frame();
+                                        top += 4;
+                                        for (int i = 0; i < 4; i++)
+                                        {
+                                            left += 8;
+
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
+                                            left += 7;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
+                                            left -= 15;
+                                        }
+                                        loc += 9;
+                                        left += 8;
+                                    }
+                                    loc = buff_loc;
+                                    left = buff_left;
+                                    top = buff_top;
+                                }
+                                catch { top -= 4; }
+
+                                top += 4;
+                                check = true;
+                                try
+                                {
+                                    while (((left - 8 > 19 && left < 77) && (top > 6 && top + 4 < 35)) )
+                                    {
+                                        if (check == true) { top -= 4; check = false; }
+                                        Frame();
+                                        top += 4;
+                                        for (int i = 0; i < 4; i++)
+                                        {
+                                            left -= 1;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
+                                            left -= 7;
+                                            Console.SetCursorPosition(left, top + i);
+                                            Console.Write("-");
                                             left += 8;
                                         }
-                                        loc = buff_loc;
-                                        left = buff_left;
-                                        top = buff_top;
+                                        loc += 7;
+                                        left -= 8;
+                                    }
                                 }
-                                catch { }
-                                try
-                                {
-                                        while ((left - 8 > 19 && left < 77) && (top > 5 && top + 4 < 35))
-                                        {
-                                            Frame();
-                                            top += 4;
-                                            for (int i = 0; i < 4; i++)
-                                            {
-                                                left -= 1;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left -= 7;
-                                                Console.SetCursorPosition(left, top + i);
-                                                Console.Write("-");
-                                                left += 8;
-                                            }
-                                            loc += 7;
-                                            left -= 8;
-                                        }
-                                        loc = buff_loc;
-                                        left = buff_left;
-                                        top = buff_top;
-                                }
-                                catch { }
+                                catch { top -= 4; }
                                 left = buff_left;
                                 top = buff_top;
                                 loc = buff_loc;
